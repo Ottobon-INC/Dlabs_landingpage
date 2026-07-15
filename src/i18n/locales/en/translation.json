@@ -1,0 +1,148 @@
+{
+  "nav": {
+    "painPoints": "Pain Points",
+    "features": "Features",
+    "roiCalculator": "ROI Calculator",
+    "finance": "Finance",
+    "bookDemo": "Book Demo"
+  },
+  "hero": {
+    "title1": "The Operating System for",
+    "title2": "Modern Diagnostics.",
+    "subtitle": "Stop fighting with paper, spreadsheets, and legacy software. DLabs automates your front-desk, standardizes your clinical workflows, and guarantees B2B billing accuracy.",
+    "startFreeTrial": "Start Free Trial"
+  },
+  "painPoints": {
+    "title": "The Chaos of a Disconnected Lab",
+    "subtitle": "What happens when your clinic operates without a unified LIMS.",
+    "points": {
+      "0": {
+        "title": "Walk-in patient registration",
+        "description": "Paper forms, duplicate data, lost records"
+      },
+      "1": {
+        "title": "Sample collection & labelling",
+        "description": "Handwritten barcodes, mix-ups between vials"
+      },
+      "2": {
+        "title": "Lab result entry",
+        "description": "Spreadsheets, no auto flagging of abnormal values"
+      },
+      "3": {
+        "title": "Corporate billing",
+        "description": "Manual discount calculations, incorrect invoices"
+      },
+      "4": {
+        "title": "Revenue leakage",
+        "description": "Uncollected dues, missing payments from B2B partners"
+      },
+      "5": {
+        "title": "Audit & Compliance",
+        "description": "NABL/ISO prep takes weeks of manual log assembly"
+      },
+      "6": {
+        "title": "Multi-center coordination",
+        "description": "No shared system, phone-based handoffs"
+      }
+    }
+  },
+  "features": {
+    "title": "Front Desk Superpowers",
+    "subtitle": "Diagnostic centers lose up to 3 hours a day on manual data entry. We've built tools to make your front-desk 10x faster.",
+    "smartLookup": {
+      "title": "Smart Lookup Engine",
+      "description": "Returning patient profiles load in under 10 seconds via phone-number lookup. Skip manual data entry and accelerate queues instantly.",
+      "badge": "Profile Auto-filled"
+    },
+    "discountEngine": {
+      "title": "Auto B2B Discount Engine",
+      "description": "Eliminate manual calculation errors. Assign corporate tags and watch the engine apply complex percentage discounts automatically.",
+      "panel": "Comprehensive Panel",
+      "discount": "Corporate Discount (20%)",
+      "totalDue": "Total Due"
+    }
+  },
+  "sampleAccession": {
+    "title": "Foolproof Sample Accession",
+    "subtitle": "Streamlined specimen tracking designed to meet strict ISO/NABL compliance standards.",
+    "barcode": {
+      "title": "Barcode Tracking",
+      "description": "Generate Zebra printer sticker barcodes linked instantly to a specific patient vial."
+    },
+    "auditTrail": {
+      "title": "ISO/NABL Audit Trail",
+      "description": "Standardize rejection workflows with pre-defined, compliance-ready reason codes.",
+      "specimen": "Hemolyzed Specimen",
+      "reject": "REJECT SAMPLE"
+    },
+    "bulkCollection": {
+      "title": "Bulk Collection",
+      "description": "Clear bottlenecks by bulk-collecting and acknowledging batches of samples with a single click.",
+      "acceptAll": "Accept All"
+    }
+  },
+  "clinicalSafety": {
+    "title": "The Clinical Safety Net",
+    "description": "Our <1>Auto-Abnormal Flagging</1> engine ensures critical values are never missed, alongside SLA-aware TAT (Turnaround Time) tracking that keeps operations on schedule.",
+    "consoleTitle": "Operations Console - Parameter Entry",
+    "table": {
+      "parameter": "Parameter",
+      "refRange": "Ref. Range",
+      "unit": "Unit",
+      "observedValue": "Observed Value"
+    },
+    "hemoglobin": "Hemoglobin (Hb)",
+    "criticalLow": "Critical Low"
+  },
+  "roiCalculator": {
+    "title": "Calculate Your ROI",
+    "subtitle": "See how much time DLabs can save your diagnostic center every month.",
+    "averageWalkins": "Average Daily Walk-ins:",
+    "manualEntry": "Manual Entry (Paper/Legacy)",
+    "hoursDay": "hours/day",
+    "hourDay": "hour/day",
+    "smartLookup": "With DLabs Smart Lookup",
+    "monthlySaved": "Monthly Hours Saved",
+    "hrs": "hrs",
+    "fte": "full-time employee(s)"
+  },
+  "finance": {
+    "title": "Real-Time Finance & Admin Control",
+    "subtitle": "Complete visibility into your lab's financial health and business partnerships.",
+    "telemetry": {
+      "title": "Finance Telemetry",
+      "collected": "Collected",
+      "pending": "Pending",
+      "totalPaid": "Total Paid",
+      "receivables": "Receivables"
+    },
+    "creditLimits": {
+      "title": "B2B Credit Limits",
+      "warning": "Warning: 85% Reached"
+    },
+    "commission": {
+      "title": "Doctor Commission Tracking",
+      "payoutDue": "Payout Due",
+      "referralMgmt": "Automated referral management"
+    }
+  },
+  "superpowers": {
+    "search": {
+      "title": "Global Instant Search",
+      "description": "Press <1>Ctrl</1> + <2>K</2> to search across patients, tests, and bills instantly."
+    },
+    "language": {
+      "title": "Multi-Language Support",
+      "description": "Accessible interfaces native in English (en), Telugu (te), and Hindi (hi)."
+    },
+    "integration": {
+      "title": "Instrument Integration",
+      "description": "Seamless bi-directional HL7, Sysmex, and ROCHE-COBAS connectivity."
+    },
+    "adminConsole": {
+      "title": "Enterprise Admin Console",
+      "description": "Comprehensive management for Doctors, Centers, Users, Outsourcing, and Marketing all in one secure pane."
+    },
+    "rightsReserved": "All rights reserved."
+  }
+}

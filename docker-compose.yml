@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dlabs_webapp
+    ports:
+      - "9600:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    # If you have an external API, you could link it here or use environment variables
