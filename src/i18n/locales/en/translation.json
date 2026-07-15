@@ -1,148 +1,134 @@
 {
   "nav": {
-    "painPoints": "Pain Points",
-    "features": "Features",
-    "roiCalculator": "ROI Calculator",
-    "finance": "Finance",
-    "bookDemo": "Book Demo"
+    "workflow": "Workflow",
+    "features": "Modules",
+    "roadmap": "Roadmap",
+    "login": "Login"
   },
   "hero": {
-    "title1": "The Operating System for",
-    "title2": "Modern Diagnostics.",
-    "subtitle": "Stop fighting with paper, spreadsheets, and legacy software. DLabs automates your front-desk, standardizes your clinical workflows, and guarantees B2B billing accuracy.",
+    "title1": "Stop Paying More for Less.",
+    "title2": "Double Your Users Today.",
+    "subtitle": "Get up to 8 parallel users for just ₹4,000/month. No hidden fees. No server costs.",
     "startFreeTrial": "Start Free Trial"
   },
-  "painPoints": {
-    "title": "The Chaos of a Disconnected Lab",
-    "subtitle": "What happens when your clinic operates without a unified LIMS.",
-    "points": {
+  "tco": {
+    "title": "Stop Overpaying for Clunky Software. Here is How DLabs Actually Saves You Money.",
+    "benefit1Title": "Flat Pricing, More Users",
+    "benefit1Desc": "Pay just ₹4,000/month for up to 8 parallel logins. Stop paying per-user penalties.",
+    "benefit2Title": "2-Minute Morning Rush",
+    "benefit2Desc": "Cut registration time in half. Clear your waiting room faster during peak hours.",
+    "benefit3Title": "Zero Training Headaches",
+    "benefit3Desc": "100% Telugu interface for your front desk. New hires can operate it perfectly on day one."
+  },
+  "easeOfUse": {
+    "title": "The 2-Minute Morning Rush Workflow",
+    "subtitle": "Designed for your front desk. Register a patient, select tests, and generate a bill in under 2 minutes. Simple enough for 12th-pass staff to learn on day one."
+  },
+  "workflow": {
+    "title": "Complete Laboratory Workflow",
+    "subtitle": "DLabs manages the entire lifecycle of a diagnostic test from patient entry to final billing.",
+    "step1": {
+      "title": "1. Registration",
+      "description": "Phone number lookup and auto-filled details for smart, lightning-fast onboarding."
+    },
+    "step2": {
+      "title": "2. Sample Accession",
+      "description": "Barcode generation and rejection tracking to eliminate sample mix-ups."
+    },
+    "step3": {
+      "title": "3. Operations & Pathology",
+      "description": "Auto-abnormal result flagging, Turnaround Time (TAT) tracking, and digital pathologist sign-off."
+    },
+    "step4": {
+      "title": "4. Report Dispatch",
+      "description": "Printed reports, digital delivery (WhatsApp/Email), and STAT priority handling."
+    },
+    "step5": {
+      "title": "5. Billing & Finance",
+      "description": "Instant payment collection, UPI integration, Cash support, and a real-time finance dashboard."
+    }
+  },
+  "modules": {
+    "title": "Additional Product Modules",
+    "subtitle": "Everything you need to run your business like a pro.",
+    "items": {
       "0": {
-        "title": "Walk-in patient registration",
-        "description": "Paper forms, duplicate data, lost records"
+        "title": "Command Centre Dashboard",
+        "description": "Real-time metrics, KPIs, and central monitoring for lab owners."
       },
       "1": {
-        "title": "Sample collection & labelling",
-        "description": "Handwritten barcodes, mix-ups between vials"
+        "title": "Test Catalog & B2B Billing",
+        "description": "Discount automation and corporate client management."
       },
       "2": {
-        "title": "Lab result entry",
-        "description": "Spreadsheets, no auto flagging of abnormal values"
+        "title": "Operations & TAT",
+        "description": "Clinical safety, timely report delivery, and turnaround monitoring."
       },
       "3": {
-        "title": "Corporate billing",
-        "description": "Manual discount calculations, incorrect invoices"
+        "title": "Regional Language Support",
+        "description": "Native support for Hindi, Telugu, and English."
       },
       "4": {
-        "title": "Revenue leakage",
-        "description": "Uncollected dues, missing payments from B2B partners"
-      },
-      "5": {
-        "title": "Audit & Compliance",
-        "description": "NABL/ISO prep takes weeks of manual log assembly"
-      },
-      "6": {
-        "title": "Multi-center coordination",
-        "description": "No shared system, phone-based handoffs"
+        "title": "Multi-Center Admin Control",
+        "description": "Role-based permissions and centralized management for multiple branches."
       }
     }
   },
-  "features": {
-    "title": "Front Desk Superpowers",
-    "subtitle": "Diagnostic centers lose up to 3 hours a day on manual data entry. We've built tools to make your front-desk 10x faster.",
-    "smartLookup": {
-      "title": "Smart Lookup Engine",
-      "description": "Returning patient profiles load in under 10 seconds via phone-number lookup. Skip manual data entry and accelerate queues instantly.",
-      "badge": "Profile Auto-filled"
-    },
-    "discountEngine": {
-      "title": "Auto B2B Discount Engine",
-      "description": "Eliminate manual calculation errors. Assign corporate tags and watch the engine apply complex percentage discounts automatically.",
-      "panel": "Comprehensive Panel",
-      "discount": "Corporate Discount (20%)",
-      "totalDue": "Total Due"
-    }
-  },
-  "sampleAccession": {
-    "title": "Foolproof Sample Accession",
-    "subtitle": "Streamlined specimen tracking designed to meet strict ISO/NABL compliance standards.",
-    "barcode": {
-      "title": "Barcode Tracking",
-      "description": "Generate Zebra printer sticker barcodes linked instantly to a specific patient vial."
-    },
-    "auditTrail": {
-      "title": "ISO/NABL Audit Trail",
-      "description": "Standardize rejection workflows with pre-defined, compliance-ready reason codes.",
-      "specimen": "Hemolyzed Specimen",
-      "reject": "REJECT SAMPLE"
-    },
-    "bulkCollection": {
-      "title": "Bulk Collection",
-      "description": "Clear bottlenecks by bulk-collecting and acknowledging batches of samples with a single click.",
-      "acceptAll": "Accept All"
-    }
-  },
-  "clinicalSafety": {
-    "title": "The Clinical Safety Net",
-    "description": "Our <1>Auto-Abnormal Flagging</1> engine ensures critical values are never missed, alongside SLA-aware TAT (Turnaround Time) tracking that keeps operations on schedule.",
-    "consoleTitle": "Operations Console - Parameter Entry",
-    "table": {
-      "parameter": "Parameter",
-      "refRange": "Ref. Range",
-      "unit": "Unit",
-      "observedValue": "Observed Value"
-    },
-    "hemoglobin": "Hemoglobin (Hb)",
-    "criticalLow": "Critical Low"
-  },
-  "roiCalculator": {
-    "title": "Calculate Your ROI",
-    "subtitle": "See how much time DLabs can save your diagnostic center every month.",
-    "averageWalkins": "Average Daily Walk-ins:",
-    "manualEntry": "Manual Entry (Paper/Legacy)",
-    "hoursDay": "hours/day",
-    "hourDay": "hour/day",
-    "smartLookup": "With DLabs Smart Lookup",
-    "monthlySaved": "Monthly Hours Saved",
-    "hrs": "hrs",
-    "fte": "full-time employee(s)"
-  },
-  "finance": {
+  "financeAdmin": {
     "title": "Real-Time Finance & Admin Control",
     "subtitle": "Complete visibility into your lab's financial health and business partnerships.",
-    "telemetry": {
-      "title": "Finance Telemetry",
-      "collected": "Collected",
-      "pending": "Pending",
-      "totalPaid": "Total Paid",
-      "receivables": "Receivables"
-    },
-    "creditLimits": {
-      "title": "B2B Credit Limits",
-      "warning": "Warning: 85% Reached"
-    },
-    "commission": {
-      "title": "Doctor Commission Tracking",
-      "payoutDue": "Payout Due",
-      "referralMgmt": "Automated referral management"
+    "telemetry": "Finance Telemetry",
+    "collected": "Collected",
+    "pending": "Pending",
+    "totalPaid": "TOTAL PAID",
+    "receivables": "RECEIVABLES",
+    "b2b": "B2B Credit Limits",
+    "cityHospital": "City Hospital",
+    "warningReached": "WARNING: 85% REACHED",
+    "doctorCommission": "Doctor Commission Tracking",
+    "payoutDue": "PAYOUT DUE",
+    "autoReferral": "Automated referral management",
+    "features": {
+      "search": {
+        "title": "Global Instant Search",
+        "description": "Press <kbd>Ctrl</kbd> + <kbd>K</kbd> to search across patients, tests, and bills instantly."
+      },
+      "language": {
+        "title": "Multi-Language Support",
+        "description": "Accessible interfaces native in English (en), Telugu (te), and Hindi (hi)."
+      },
+      "instrument": {
+        "title": "Instrument Integration",
+        "description": "Seamless bi-directional HL7, Sysmex, and ROCHE-COBAS connectivity."
+      },
+      "admin": {
+        "title": "Enterprise Admin Console",
+        "description": "Comprehensive management for Doctors, Centers, Users, Outsourcing, and Marketing all in one secure pane."
+      }
     }
   },
-  "superpowers": {
-    "search": {
-      "title": "Global Instant Search",
-      "description": "Press <1>Ctrl</1> + <2>K</2> to search across patients, tests, and bills instantly."
-    },
-    "language": {
-      "title": "Multi-Language Support",
-      "description": "Accessible interfaces native in English (en), Telugu (te), and Hindi (hi)."
-    },
-    "integration": {
-      "title": "Instrument Integration",
-      "description": "Seamless bi-directional HL7, Sysmex, and ROCHE-COBAS connectivity."
-    },
-    "adminConsole": {
-      "title": "Enterprise Admin Console",
-      "description": "Comprehensive management for Doctors, Centers, Users, Outsourcing, and Marketing all in one secure pane."
-    },
+  "roadmap": {
+    "title": "What’s Next: The DLabs Innovation Roadmap",
+    "subtitle": "We are building the future of diagnostics. Coming soon: Seamless bi-directional instrument integration (Sysmex, ROCHE) to eliminate manual entry, and Agentic AI to automate your workflows.",
+    "timeline1": "Phase 2: Analyzer Integration",
+    "timeline1Desc": "Sysmex & ROCHE bi-directional sync.",
+    "timeline2": "Phase 3: Agentic AI",
+    "timeline2Desc": "Automated workflow & decision support."
+  },
+  "stability": {
+    "title": "Crash-Proof Stability & 100% Data Security",
+    "description": "Built for peak morning hours. Our secure cloud architecture handles simultaneous billing and reporting without ever mixing up patient IDs. If your local Wi-Fi drops mid-registration, our system protects your entries. Fully compliant with Indian digital health data regulations."
+  },
+  "localization": {
+    "title": "Bilingual Operations: Telugu for Staff, English for Doctors",
+    "description": "Let your front desk operate natively. Staff can register patients, search tests, and navigate the software entirely in Telugu. When it's time to print, DLabs automatically generates a standardized, professional English report for the referring doctor. No translation delays."
+  },
+  "support": {
+    "title": "Stop Waiting on Tickets. Get Same-Day Support.",
+    "description": "Billing frozen? Don't wait three days for an email reply from a generic IT desk. Get immediate, same-day resolution over the phone from our local, Telugu-speaking customer care team."
+  },
+  "footer": {
+    "slogan": "Pioneering Precision, Powering Your Lab's Growth",
     "rightsReserved": "All rights reserved."
   }
 }
