@@ -4,9 +4,9 @@ import { useTranslation, Trans } from 'react-i18next';
 import MedicalMonitor from '../components/MedicalMonitor';
 import LanguageTransition, { type Lang } from '../components/LanguageTransition';
 import { 
-  Search, Users, IndianRupee, ShieldCheck, CheckCircle2, 
-  ArrowUpRight, AlertTriangle, Activity, Printer, FileCheck, 
-  Layers, ChevronDown, PieChart, Building2, Stethoscope,
+  Search, ShieldCheck, CheckCircle2, 
+  AlertTriangle, Activity, Printer, FileCheck, 
+  Layers, ChevronDown, Building2, Stethoscope,
   Command, Globe2, Webhook, LockKeyhole, FileWarning, TestTube, TableProperties, Calculator, TrendingDown, BookOpen, PhoneCall
 } from 'lucide-react';
 
