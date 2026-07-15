@@ -5,9 +5,9 @@ import LanguageTransition, { type Lang } from '../components/LanguageTransition'
 import { 
   Search, CheckCircle2, 
   AlertTriangle, Activity, Printer, 
-  ChevronDown, HeartHandshake, 
+  ChevronDown, 
   Command, Globe2, LockKeyhole, 
-  TrendingUp, Smile, Zap, Cpu, Send, CreditCard, Banknote, BrainCircuit,
+  TrendingUp, Zap, Cpu, Send, CreditCard, Banknote, BrainCircuit,
   Building2, Stethoscope, Share2, Headset, ShieldCheck, RefreshCw, FileBadge,
   Users, GraduationCap
 } from 'lucide-react';
