@@ -73,7 +73,7 @@ export default function LandingPage() {
 
       <div className="min-h-screen flex flex-col">
         {/* Navbar */}
-        <nav className="relative z-20 w-full px-6 py-8 lg:px-12 flex justify-between items-center max-w-[1400px] mx-auto">
+        <nav className="relative z-20 w-full px-4 sm:px-6 py-4 sm:py-8 lg:px-12 flex justify-between items-center max-w-[1400px] mx-auto">
           <div className="flex items-center text-[#0a1f1e] font-serif text-2xl font-bold tracking-tight cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
             <Activity className="w-8 h-8 mr-2 text-teal-600" />
             DLabs
@@ -83,24 +83,24 @@ export default function LandingPage() {
             <a href="#modules" className="hover:text-teal-600 transition-colors">{t('nav.features')}</a>
             <a href="#roadmap" className="hover:text-teal-600 transition-colors">{t('nav.roadmap')}</a>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <div className="flex items-center gap-1 bg-white/50 p-1 rounded-xl border border-teal-200 shadow-sm">
               <button 
                 onClick={() => switchLanguage('en')}
-                className={`px-4 py-1.5 rounded-lg text-sm font-bold transition-all duration-300 ${i18n.language === 'en' ? 'bg-teal-600 text-white shadow-md scale-105' : 'text-teal-700 hover:bg-white'}`}
+                className={`px-2 sm:px-4 py-1 sm:py-1.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 ${i18n.language === 'en' ? 'bg-teal-600 text-white shadow-md scale-105' : 'text-teal-700 hover:bg-white'}`}
               >
                 EN
               </button>
               <button 
                 onClick={() => switchLanguage('te')}
-                className={`px-4 py-1.5 rounded-lg text-sm font-bold transition-all duration-300 ${i18n.language === 'te' ? 'bg-teal-600 text-white shadow-md scale-105' : 'text-teal-700 hover:bg-white'}`}
+                className={`px-2 sm:px-4 py-1 sm:py-1.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 ${i18n.language === 'te' ? 'bg-teal-600 text-white shadow-md scale-105' : 'text-teal-700 hover:bg-white'}`}
               >
                 TE
               </button>
             </div>
-            <button className="px-8 py-2 border-2 border-[#54c4b5] text-[#0a1f1e] font-bold rounded-[20px] hover:bg-teal-50 transition-colors shadow-sm">
+            <a href="/login" className="px-4 py-1.5 sm:px-8 sm:py-2 border-2 border-[#54c4b5] text-[#0a1f1e] font-bold rounded-[16px] sm:rounded-[20px] hover:bg-teal-50 transition-colors shadow-sm block text-center text-sm sm:text-base whitespace-nowrap">
               {t('nav.login')}
-            </button>
+            </a>
           </div>
         </nav>
 
@@ -109,7 +109,7 @@ export default function LandingPage() {
           <div className="max-w-[1400px] w-full mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="text-left max-w-xl">
-                <motion.h1 variants={fadeInUp} className="text-4xl lg:text-5xl xl:text-[3.2rem] font-black text-[#0f3b39] leading-[1.1] mb-4">
+                <motion.h1 variants={fadeInUp} className="text-3xl sm:text-4xl lg:text-5xl xl:text-[3.2rem] font-black text-[#0f3b39] leading-[1.1] mb-4">
                   {t('hero.title1')} <br/>
                   <span className="text-[#3c8c83]">{t('hero.title2')}</span>
                 </motion.h1>
@@ -117,15 +117,15 @@ export default function LandingPage() {
                   {t('hero.subtitle')}
                 </motion.p>
                 <motion.div variants={fadeInUp}>
-                  <button className="px-8 py-3.5 bg-[#1b5853] hover:bg-[#13403c] text-[#4ac2b3] rounded-[16px] font-bold text-lg transition-all shadow-xl shadow-[#1b5853]/30">
+                  <button className="px-6 py-3 sm:px-8 sm:py-3.5 bg-[#1b5853] hover:bg-[#13403c] text-[#4ac2b3] rounded-[16px] font-bold text-base sm:text-lg transition-all shadow-xl shadow-[#1b5853]/30 w-full sm:w-auto">
                     {t('hero.startFreeTrial')}
                   </button>
                 </motion.div>
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} className="w-full flex justify-center lg:justify-end">
                 {/* Cost Comparison Graphic */}
-                <div className="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-2xl border border-teal-100 flex flex-col items-center gap-6 relative w-full max-w-md mx-auto">
-                  <div className="absolute -top-4 -right-4 bg-rose-500 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg transform rotate-12">
+                <div className="bg-white/80 backdrop-blur-md p-5 sm:p-8 rounded-3xl shadow-2xl border border-teal-100 flex flex-col items-center gap-4 sm:gap-6 relative w-full max-w-md mx-auto mt-8 lg:mt-0">
+                  <div className="absolute -top-4 -right-2 sm:-right-4 bg-rose-500 text-white text-xs font-bold px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-lg transform rotate-12">
                     Save 40%
                   </div>
                   
@@ -165,7 +165,7 @@ export default function LandingPage() {
       </div>
 
       {/* 2. Biggest Selling Point – Cost Savings */}
-      <section className="py-24 px-6 bg-emerald-700 relative z-10 text-white overflow-hidden">
+      <section className="py-16 md:py-24 px-4 sm:px-6 bg-emerald-700 relative z-10 text-white overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full">
              <path d="M0,100 L0,50 Q25,25 50,50 T100,20 L100,100 Z" fill="white"/>
@@ -176,7 +176,7 @@ export default function LandingPage() {
             <div className="inline-flex items-center justify-center p-4 bg-emerald-600 rounded-full mb-8 shadow-lg shadow-emerald-900/20">
               <TrendingUp className="w-12 h-12 text-emerald-100" />
             </div>
-            <h2 className="text-4xl lg:text-5xl font-black text-white mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-8 sm:mb-12">
               {t('tco.title')}
             </h2>
             
@@ -202,7 +202,7 @@ export default function LandingPage() {
       </section>
 
       {/* 3. Ease of Use */}
-      <section className="py-24 px-6 bg-blue-50 relative z-10 border-b border-blue-100">
+      <section className="py-16 md:py-24 px-4 sm:px-6 bg-blue-50 relative z-10 border-b border-blue-100">
         <div className="max-w-6xl mx-auto">
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="order-2 lg:order-1">
@@ -221,10 +221,10 @@ export default function LandingPage() {
               </motion.div>
               
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="order-1 lg:order-2">
-                <h2 className="text-4xl lg:text-5xl font-black text-blue-950 mb-6 leading-tight">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-blue-950 mb-4 sm:mb-6 leading-tight">
                   {t('easeOfUse.title')}
                 </h2>
-                <p className="text-lg text-blue-900/70 leading-relaxed font-medium">
+                <p className="text-base sm:text-lg text-blue-900/70 leading-relaxed font-medium">
                   {t('easeOfUse.subtitle')}
                 </p>
               </motion.div>
@@ -233,16 +233,16 @@ export default function LandingPage() {
       </section>
 
       {/* 4. Complete Laboratory Workflow */}
-      <section id="workflow" className="py-24 px-6 bg-[#f8f6f0] relative z-10">
+      <section id="workflow" className="py-16 md:py-24 px-4 sm:px-6 bg-[#f8f6f0] relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20 max-w-3xl mx-auto">
-            <h2 className="text-4xl lg:text-5xl font-black text-teal-950 mb-6">{t('workflow.title')}</h2>
-            <p className="text-lg text-teal-700/80 font-medium">
+          <div className="text-center mb-12 sm:mb-20 max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-teal-950 mb-4 sm:mb-6">{t('workflow.title')}</h2>
+            <p className="text-base sm:text-lg text-teal-700/80 font-medium">
               {t('workflow.subtitle')}
             </p>
           </div>
 
-          <div className="bg-white rounded-[2.5rem] p-8 lg:p-12 border border-teal-100 shadow-xl shadow-teal-900/5 flex flex-col lg:flex-row gap-12 min-h-[600px]">
+          <div className="bg-white rounded-[2rem] sm:rounded-[2.5rem] p-5 sm:p-8 lg:p-12 border border-teal-100 shadow-xl shadow-teal-900/5 flex flex-col lg:flex-row gap-8 sm:gap-12 min-h-[600px]">
              {/* Left Menu */}
              <div className="lg:w-5/12 flex flex-col justify-center space-y-4 border-r border-teal-50 pr-0 lg:pr-8">
                {[1, 2, 3, 4, 5].map((step) => (
@@ -306,7 +306,7 @@ export default function LandingPage() {
                     )}
 
                     {activeWorkflowStep === 2 && (
-                      <div className="w-full bg-emerald-50 p-8 rounded-[2rem] border border-emerald-100/50 flex gap-6 justify-center items-center min-h-[250px]">
+                      <div className="w-full bg-emerald-50 p-6 sm:p-8 rounded-[2rem] border border-emerald-100/50 flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center min-h-[250px]">
                         {/* ZEBRA mock */}
                         <div className="bg-white text-black p-4 rounded-xl shadow-lg shadow-teal-900/10 border border-teal-100">
                           <div className="flex justify-between items-start mb-2 border-b border-teal-200 pb-1">
@@ -400,11 +400,11 @@ export default function LandingPage() {
       </section>
 
       {/* 5. Real-Time Finance & Admin Control */}
-      <section id="modules" className="py-24 px-6 relative z-10 border-t border-teal-100 bg-white">
+      <section id="modules" className="py-16 md:py-24 px-4 sm:px-6 relative z-10 border-t border-teal-100 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 max-w-3xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-teal-950 mb-4">{t('financeAdmin.title')}</h2>
-            <p className="text-lg text-teal-700/80">{t('financeAdmin.subtitle')}</p>
+          <div className="text-center mb-12 sm:mb-16 max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-teal-950 mb-3 sm:mb-4">{t('financeAdmin.title')}</h2>
+            <p className="text-base sm:text-lg text-teal-700/80">{t('financeAdmin.subtitle')}</p>
           </div>
 
           <div className="flex flex-col md:flex-row justify-center items-stretch gap-6 mb-20">
@@ -523,7 +523,7 @@ export default function LandingPage() {
       </section>
 
       {/* Localization and Support Phase 2 */}
-      <section className="py-24 px-6 bg-[#f8f7f5] relative z-10 border-t border-teal-100">
+      <section className="py-16 md:py-24 px-4 sm:px-6 bg-[#f8f7f5] relative z-10 border-t border-teal-100">
         <div className="max-w-7xl mx-auto">
           
           {/* Task 1: Bilingual Operations Split-Screen */}
@@ -532,14 +532,14 @@ export default function LandingPage() {
               <div className="inline-flex items-center justify-center p-3 bg-teal-100 rounded-xl mb-6 shadow-sm">
                 <Globe2 className="w-6 h-6 text-teal-700" />
               </div>
-              <h3 className="text-3xl lg:text-4xl font-black text-teal-950 mb-6 leading-tight">{t('localization.title')}</h3>
-              <p className="text-lg text-teal-700/80 leading-relaxed">{t('localization.description')}</p>
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-teal-950 mb-4 sm:mb-6 leading-tight">{t('localization.title')}</h3>
+              <p className="text-base sm:text-lg text-teal-700/80 leading-relaxed">{t('localization.description')}</p>
             </div>
             
             <div className="relative">
-               <div className="flex bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-teal-100 h-[380px]">
+               <div className="flex flex-col md:flex-row bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-teal-100 md:h-[380px]">
                  {/* Left side: Telugu UI */}
-                 <div className="w-1/2 bg-slate-50 border-r border-slate-200 p-6 flex flex-col gap-4 relative">
+                 <div className="w-full md:w-1/2 bg-slate-50 border-b md:border-b-0 md:border-r border-slate-200 p-4 sm:p-6 flex flex-col gap-4 relative h-[300px] md:h-auto">
                    <div className="absolute top-4 left-4 bg-teal-100 text-teal-800 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">Staff UI (Telugu)</div>
                    <div className="mt-10 bg-white p-4 rounded-xl shadow-sm border border-slate-200">
                      <div className="font-bold text-slate-800 text-sm mb-2">పేషెంట్ పేరు (Patient Name)</div>
@@ -557,7 +557,7 @@ export default function LandingPage() {
                  </div>
                  
                  {/* Right side: English PDF */}
-                 <div className="w-1/2 bg-[#e2e8f0] p-6 flex flex-col items-center justify-center relative bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+                 <div className="w-full md:w-1/2 bg-[#e2e8f0] p-4 sm:p-6 flex flex-col items-center justify-center relative bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] min-h-[300px] md:min-h-0">
                    <div className="absolute top-4 right-4 bg-indigo-100 text-indigo-800 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider z-10 shadow-sm">Doctor Report (EN)</div>
                    
                    <div className="w-full h-full bg-white border border-slate-300 shadow-lg flex flex-col p-5 relative z-0 origin-center transform scale-95 rotate-1">
@@ -600,9 +600,9 @@ export default function LandingPage() {
             <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500 rounded-full mix-blend-screen filter blur-[80px] opacity-30"></div>
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-indigo-500 rounded-full mix-blend-screen filter blur-[80px] opacity-30"></div>
             
-            <div className="flex-1 relative z-10">
-              <h3 className="text-3xl lg:text-4xl font-black mb-6 leading-tight text-white drop-shadow-sm">{t('support.title')}</h3>
-              <p className="text-lg text-blue-100/90 leading-relaxed font-medium">{t('support.description')}</p>
+            <div className="flex-1 relative z-10 text-center lg:text-left">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black mb-4 sm:mb-6 leading-tight text-white drop-shadow-sm">{t('support.title')}</h3>
+              <p className="text-base sm:text-lg text-blue-100/90 leading-relaxed font-medium">{t('support.description')}</p>
             </div>
             
             <div className="flex-1 flex justify-center relative z-10 w-full lg:w-auto">
@@ -616,9 +616,9 @@ export default function LandingPage() {
                 </div>
                 
                 {/* Badge */}
-                <div className="absolute -bottom-6 -right-6 lg:-right-10 bg-amber-400 text-amber-950 font-black px-6 py-3.5 rounded-full shadow-2xl transform rotate-3 flex items-center gap-2 border-4 border-white hover:rotate-0 transition-transform">
-                  <Zap className="w-6 h-6 fill-amber-950" />
-                  <span className="tracking-wide">Same-Day Resolution</span>
+                <div className="absolute -bottom-4 sm:-bottom-6 -right-2 sm:-right-6 lg:-right-10 bg-amber-400 text-amber-950 font-black px-4 sm:px-6 py-2 sm:py-3.5 rounded-full shadow-2xl transform rotate-3 flex items-center gap-2 border-4 border-white hover:rotate-0 transition-transform">
+                  <Zap className="w-4 h-4 sm:w-6 sm:h-6 fill-amber-950" />
+                  <span className="tracking-wide text-xs sm:text-base whitespace-nowrap">Same-Day Resolution</span>
                 </div>
               </div>
             </div>
@@ -628,7 +628,7 @@ export default function LandingPage() {
       </section>
 
       {/* Task 1: Bank-Grade Stability & Compliance */}
-      <section className="py-24 px-6 bg-slate-50 relative z-10 border-t border-slate-200">
+      <section className="py-16 md:py-24 px-4 sm:px-6 bg-slate-50 relative z-10 border-t border-slate-200">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="order-2 lg:order-1">
@@ -670,10 +670,10 @@ export default function LandingPage() {
               <div className="inline-flex items-center justify-center p-3 bg-slate-200/50 rounded-xl mb-6 shadow-sm">
                 <LockKeyhole className="w-6 h-6 text-slate-700" />
               </div>
-              <h3 className="text-3xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
+              <h3 className="text-2xl sm:text-3xl lg:text-5xl font-black text-slate-900 mb-4 sm:mb-6 leading-tight">
                 {t('stability.title')}
               </h3>
-              <p className="text-lg text-slate-600 leading-relaxed font-medium">
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-medium">
                 {t('stability.description')}
               </p>
             </motion.div>
@@ -682,7 +682,7 @@ export default function LandingPage() {
       </section>
 
       {/* Task 2: Future Roadmap Redesign */}
-      <section id="roadmap" className="py-32 px-6 bg-[#0f172a] relative z-10 overflow-hidden">
+      <section id="roadmap" className="py-20 md:py-32 px-4 sm:px-6 bg-[#0f172a] relative z-10 overflow-hidden">
         {/* Background elements */}
         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
         <div className="absolute -left-40 top-40 w-96 h-96 bg-blue-600 rounded-full mix-blend-screen filter blur-[100px] opacity-20"></div>
@@ -693,8 +693,8 @@ export default function LandingPage() {
             <div className="inline-flex items-center justify-center px-4 py-1.5 bg-blue-500/10 border border-blue-500/30 rounded-full mb-6 text-blue-400 font-bold text-sm tracking-wider uppercase">
               Coming Soon
             </div>
-            <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">{t('roadmap.title')}</h2>
-            <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">{t('roadmap.subtitle')}</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 sm:mb-6 leading-tight">{t('roadmap.title')}</h2>
+            <p className="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed px-4">{t('roadmap.subtitle')}</p>
           </div>
 
           <div className="relative">
@@ -747,11 +747,11 @@ export default function LandingPage() {
             <h2 className="text-2xl md:text-3xl font-serif text-teal-50 mb-8 max-w-lg">
                "{t('footer.slogan')}"
             </h2>
-            <div className="flex gap-6 mb-8 text-teal-400 font-semibold">
+            <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-3 md:gap-6 mb-8 text-teal-400 font-semibold text-sm md:text-base">
                <a href="#" className="hover:text-white transition-colors">www.dlabs.com</a>
-               <span>•</span>
+               <span className="hidden md:inline">•</span>
                <a href="tel:+919876543210" className="hover:text-white transition-colors">+91 98765 43210</a>
-               <span>•</span>
+               <span className="hidden md:inline">•</span>
                <a href="mailto:hello@dlabs.com" className="hover:text-white transition-colors">hello@dlabs.com</a>
             </div>
             <p className="text-teal-700 text-sm">
