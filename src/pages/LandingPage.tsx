@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import LanguageTransition, { type Lang } from '../components/LanguageTransition';
 import { 
   Search, CheckCircle2, 
