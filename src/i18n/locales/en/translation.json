@@ -6,10 +6,13 @@
     "login": "Login"
   },
   "hero": {
-    "title1": "Stop Paying More for Less.",
-    "title2": "Double Your Users Today.",
-    "subtitle": "Get up to 8 parallel users for just ₹4,000/month. No hidden fees. No server costs.",
-    "startFreeTrial": "Start Free Trial"
+    "title1": "Focus on Your Patients.",
+    "title2": "We’ll Handle the IT.",
+    "subtitle": "Traditional software comes with hidden costs: expensive local servers, yearly AMCs, and weeks of staff training. DLabs gives you a secure, Telugu-ready cloud system where everything is included in one flat rate.",
+    "startFreeTrial": "Start Free Trial",
+    "badge": "Zero Hidden Costs",
+    "oldLimsSubtitle": "+ AMC, Servers & IT Delays",
+    "dlabsSubtitle": "All-Inclusive Cloud System"
   },
   "tco": {
     "title": "Stop Overpaying for Clunky Software. Here is How DLabs Actually Saves You Money.",
@@ -75,19 +78,19 @@
     }
   },
   "financeAdmin": {
-    "title": "Real-Time Finance & Admin Control",
-    "subtitle": "Complete visibility into your lab's financial health and business partnerships.",
-    "telemetry": "Finance Telemetry",
-    "collected": "Collected",
+    "title": "Daily Accounts & Lab Control",
+    "subtitle": "Easily track daily collections, pending balances, and doctor payouts at a glance.",
+    "telemetry": "Today's Collections",
+    "collected": "Received",
     "pending": "Pending",
-    "totalPaid": "TOTAL PAID",
-    "receivables": "RECEIVABLES",
-    "b2b": "B2B Credit Limits",
+    "totalPaid": "Total Collected",
+    "receivables": "Balance to come",
+    "b2b": "Hospital Tie-ups Accounts",
     "cityHospital": "City Hospital",
-    "warningReached": "WARNING: 85% REACHED",
-    "doctorCommission": "Doctor Commission Tracking",
-    "payoutDue": "PAYOUT DUE",
-    "autoReferral": "Automated referral management",
+    "warningReached": "Alert: Limit is near",
+    "doctorCommission": "Doctor Referrals & Payouts",
+    "payoutDue": "Balance to be given",
+    "autoReferral": "Payout calculations ready automatically",
     "features": {
       "search": {
         "title": "Global Instant Search",

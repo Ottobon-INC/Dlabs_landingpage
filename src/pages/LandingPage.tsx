@@ -109,12 +109,15 @@ export default function LandingPage() {
           <div className="max-w-[1400px] w-full mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="text-left max-w-xl">
-                <motion.h1 variants={fadeInUp} className="text-3xl sm:text-4xl lg:text-5xl xl:text-[3.2rem] font-black text-[#0f3b39] leading-[1.1] mb-4">
-                  {t('hero.title1')} <br/>
-                  <span className="text-[#3c8c83]">{t('hero.title2')}</span>
+                <motion.h1 variants={fadeInUp} className={`text-3xl sm:text-4xl lg:text-5xl xl:text-[3.2rem] font-black text-[#0f3b39] mb-4 ${i18n.language === 'te' ? 'leading-[1.4]' : 'leading-[1.1]'}`}>
+                  {i18n.language === 'te' ? (
+                    <>మీరు పేషెంట్స్ పైన ఫోకస్ చేయండి. <br/><span className="text-[#3c8c83]">IT టెన్షన్ మేము చూసుకుంటాం.</span></>
+                  ) : (
+                    <>{t('hero.title1')} <br/><span className="text-[#3c8c83]">{t('hero.title2')}</span></>
+                  )}
                 </motion.h1>
-                <motion.p variants={fadeInUp} className="text-[15px] lg:text-[16px] text-[#0f3b39]/90 mb-8 font-semibold leading-relaxed max-w-[420px]">
-                  {t('hero.subtitle')}
+                <motion.p variants={fadeInUp} className={`text-[15px] lg:text-[16px] text-[#0f3b39]/90 mb-8 max-w-[420px] ${i18n.language === 'te' ? 'leading-loose font-medium' : 'leading-relaxed font-semibold'}`}>
+                  {i18n.language === 'te' ? 'సర్వర్లు, AMCలు, సాఫ్ట్వేర్ ట్రైనింగ్... ఈ తలనొప్పులు ఇక వద్దు. తెలుగులో సులువుగా వాడుకునే DLabs క్లౌడ్ సిస్టమ్కి మారండి. ఎక్స్ట్రా ఖర్చులు ఏమీ ఉండవు.' : t('hero.subtitle')}
                 </motion.p>
                 <motion.div variants={fadeInUp}>
                   <button className="px-6 py-3 sm:px-8 sm:py-3.5 bg-[#1b5853] hover:bg-[#13403c] text-[#4ac2b3] rounded-[16px] font-bold text-base sm:text-lg transition-all shadow-xl shadow-[#1b5853]/30 w-full sm:w-auto">
@@ -126,17 +129,17 @@ export default function LandingPage() {
                 {/* Cost Comparison Graphic */}
                 <div className="bg-white/80 backdrop-blur-md p-5 sm:p-8 rounded-3xl shadow-2xl border border-teal-100 flex flex-col items-center gap-4 sm:gap-6 relative w-full max-w-md mx-auto mt-8 lg:mt-0">
                   <div className="absolute -top-4 -right-2 sm:-right-4 bg-rose-500 text-white text-xs font-bold px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-lg transform rotate-12">
-                    Save 40%
+                    {i18n.language === 'te' ? 'నో హిడెన్ ఫీజు' : t('hero.badge')}
                   </div>
                   
                   {/* Old LIMS */}
-                  <div className="w-full flex justify-between items-center bg-slate-50 p-5 rounded-2xl border border-slate-200 opacity-60 relative">
+                  <div className="w-full flex justify-between items-center bg-slate-50 p-5 rounded-2xl border border-slate-200 opacity-60 relative min-h-[96px]">
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-[110%] h-[3px] bg-rose-500/80 transform -rotate-6"></div>
                     </div>
                     <div className="flex flex-col">
                       <span className="text-slate-500 font-bold text-sm uppercase tracking-wider">Old LIMS</span>
-                      <span className="text-slate-700 font-black text-lg">5 Users</span>
+                      <span className="text-slate-700 font-bold text-xs sm:text-sm max-w-[130px] leading-tight mt-0.5">{i18n.language === 'te' ? '+ AMC & సర్వర్ ఖర్చులు' : t('hero.oldLimsSubtitle')}</span>
                     </div>
                     <div className="text-slate-500 font-black text-2xl">₹6,000<span className="text-sm font-bold">/mo</span></div>
                   </div>
@@ -147,13 +150,13 @@ export default function LandingPage() {
                   </div>
 
                   {/* DLabs */}
-                  <div className="w-full flex justify-between items-center bg-gradient-to-r from-teal-50 to-emerald-50 p-6 rounded-2xl border-2 border-teal-400 shadow-xl relative overflow-hidden">
+                  <div className="w-full flex justify-between items-center bg-gradient-to-r from-teal-50 to-emerald-50 p-6 rounded-2xl border-2 border-teal-400 shadow-xl relative overflow-hidden min-h-[96px]">
                     <div className="absolute top-0 right-0 w-24 h-24 bg-teal-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
                     <div className="absolute bottom-0 left-0 w-24 h-24 bg-emerald-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-75"></div>
                     
                     <div className="flex flex-col relative z-10">
                       <span className="text-teal-900 font-black text-xl tracking-tight">DLabs</span>
-                      <span className="text-teal-700 font-bold text-base">8 Users</span>
+                      <span className="text-teal-700 font-bold text-xs sm:text-sm max-w-[130px] leading-tight mt-0.5">{i18n.language === 'te' ? 'ఆల్-ఇన్-వన్ క్లౌడ్' : t('hero.dlabsSubtitle')}</span>
                     </div>
                     <div className="text-teal-700 font-black text-4xl relative z-10">₹4,000<span className="text-base font-bold text-teal-600">/mo</span></div>
                   </div>
@@ -165,7 +168,7 @@ export default function LandingPage() {
       </div>
 
       {/* 2. Biggest Selling Point – Cost Savings */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 bg-emerald-700 relative z-10 text-white overflow-hidden">
+      <section className="py-16 md:py-24 px-4 sm:px-6 bg-gradient-to-br from-[#35a999] to-[#1a9d8d] relative z-10 text-white overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full">
              <path d="M0,100 L0,50 Q25,25 50,50 T100,20 L100,100 Z" fill="white"/>
@@ -173,28 +176,28 @@ export default function LandingPage() {
         </div>
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-            <div className="inline-flex items-center justify-center p-4 bg-emerald-600 rounded-full mb-8 shadow-lg shadow-emerald-900/20">
-              <TrendingUp className="w-12 h-12 text-emerald-100" />
+            <div className="inline-flex items-center justify-center p-4 bg-white/20 rounded-full mb-8 shadow-lg shadow-teal-900/20 backdrop-blur-sm">
+              <TrendingUp className="w-12 h-12 text-white" />
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-8 sm:mb-12">
               {t('tco.title')}
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-               <div className="bg-emerald-600/50 backdrop-blur-sm p-6 rounded-3xl border border-emerald-500/50 flex flex-col items-center justify-center text-center">
-                  <Users className="w-8 h-8 text-emerald-300 mb-3" />
-                  <span className="text-2xl font-bold text-emerald-50 mb-2">{t('tco.benefit1Title')}</span>
-                  <span className="text-emerald-100">{t('tco.benefit1Desc')}</span>
+               <div className="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/20 flex flex-col items-center justify-center text-center shadow-lg shadow-teal-900/10 hover:bg-white/15 transition-all">
+                  <Users className="w-8 h-8 text-white/90 mb-3" />
+                  <span className="text-2xl font-bold text-white mb-2">{t('tco.benefit1Title')}</span>
+                  <span className="text-white/80">{t('tco.benefit1Desc')}</span>
                </div>
-               <div className="bg-emerald-600/50 backdrop-blur-sm p-6 rounded-3xl border border-emerald-500/50 flex flex-col items-center justify-center text-center">
+               <div className="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/20 flex flex-col items-center justify-center text-center shadow-lg shadow-teal-900/10 hover:bg-white/15 transition-all">
                   <Zap className="w-8 h-8 text-amber-300 mb-3" />
-                  <span className="text-2xl font-bold text-emerald-50 mb-2">{t('tco.benefit2Title')}</span>
-                  <span className="text-emerald-100">{t('tco.benefit2Desc')}</span>
+                  <span className="text-2xl font-bold text-white mb-2">{t('tco.benefit2Title')}</span>
+                  <span className="text-white/80">{t('tco.benefit2Desc')}</span>
                </div>
-               <div className="bg-emerald-600/50 backdrop-blur-sm p-6 rounded-3xl border border-emerald-500/50 flex flex-col items-center justify-center text-center">
-                  <GraduationCap className="w-8 h-8 text-emerald-300 mb-3" />
-                  <span className="text-2xl font-bold text-emerald-50 mb-2">{t('tco.benefit3Title')}</span>
-                  <span className="text-emerald-100">{t('tco.benefit3Desc')}</span>
+               <div className="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/20 flex flex-col items-center justify-center text-center shadow-lg shadow-teal-900/10 hover:bg-white/15 transition-all">
+                  <GraduationCap className="w-8 h-8 text-white/90 mb-3" />
+                  <span className="text-2xl font-bold text-white mb-2">{t('tco.benefit3Title')}</span>
+                  <span className="text-white/80">{t('tco.benefit3Desc')}</span>
                </div>
             </div>
           </motion.div>
@@ -412,8 +415,8 @@ export default function LandingPage() {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="bg-white border-2 border-teal-400 rounded-[2rem] p-6 flex-1 max-w-[340px] shadow-sm hover:shadow-md transition-shadow">
               <h4 className="font-bold text-teal-950 text-sm mb-8">{t('financeAdmin.telemetry')}</h4>
               <div className="flex justify-between text-[10px] font-bold mb-2">
-                <span className="text-teal-600">{t('financeAdmin.collected')} (96%)</span>
-                <span className="text-orange-500">{t('financeAdmin.pending')} (4%)</span>
+                <span className="text-teal-600">{t('financeAdmin.collected')} - 96%</span>
+                <span className="text-orange-500">{t('financeAdmin.pending')} - 4%</span>
               </div>
               <div className="h-2 w-full flex rounded-full overflow-hidden mb-8">
                 <div className="h-full bg-teal-500" style={{ width: '96%' }}></div>
@@ -470,51 +473,60 @@ export default function LandingPage() {
           </div>
 
           {/* Bottom features row */}
-          <div className="border-t border-teal-100/60 pt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+          <div className="border-t border-teal-100/60 pt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Feature 1 */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-              <div className="w-12 h-12 bg-blue-50/50 rounded-2xl flex items-center justify-center mb-6 border border-blue-100/50">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="bg-slate-50 border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-200 p-6 rounded-xl flex flex-col items-start">
+              <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
                 <Command className="w-5 h-5 text-blue-500" />
               </div>
-              <h4 className="font-bold text-teal-950 mb-3 text-sm">{t('financeAdmin.features.search.title')}</h4>
-              <p className="text-[13px] text-teal-700/70 leading-relaxed">
-                <Trans 
-                  i18nKey="financeAdmin.features.search.description"
-                  components={{ kbd: <kbd className="px-1.5 py-0.5 bg-white border border-teal-200 rounded text-teal-600 text-[10px] shadow-sm font-sans mx-0.5 font-bold" /> }}
-                />
+              <h4 className="text-slate-900 font-semibold text-lg mb-2">
+                {i18n.language === 'te' ? 'గ్లోబల్ ఇన్స్టంట్ సెర్చ్' : 'Global Instant Search'}
+              </h4>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                {i18n.language === 'te' ? (
+                  <>రోగులు, టెస్టులు మరియు బిల్లుల కోసం <kbd className="px-1.5 py-0.5 bg-white border border-teal-200 rounded text-teal-600 text-[10px] shadow-sm font-sans mx-0.5 font-bold inline-block align-middle">Ctrl</kbd> + <kbd className="px-1.5 py-0.5 bg-white border border-teal-200 rounded text-teal-600 text-[10px] shadow-sm font-sans mx-0.5 font-bold inline-block align-middle">K</kbd> నొక్కండి.</>
+                ) : (
+                  <>Press <kbd className="px-1.5 py-0.5 bg-white border border-teal-200 rounded text-teal-600 text-[10px] shadow-sm font-sans mx-0.5 font-bold inline-block align-middle">Ctrl</kbd> + <kbd className="px-1.5 py-0.5 bg-white border border-teal-200 rounded text-teal-600 text-[10px] shadow-sm font-sans mx-0.5 font-bold inline-block align-middle">K</kbd> to search across patients, tests, and bills instantly.</>
+                )}
               </p>
             </motion.div>
 
             {/* Feature 2 */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-              <div className="w-12 h-12 bg-green-50/50 rounded-2xl flex items-center justify-center mb-6 border border-green-100/50">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="bg-slate-50 border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-200 p-6 rounded-xl flex flex-col items-start">
+              <div className="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center mb-4">
                 <Globe2 className="w-5 h-5 text-green-500" />
               </div>
-              <h4 className="font-bold text-teal-950 mb-3 text-sm">{t('financeAdmin.features.language.title')}</h4>
-              <p className="text-[13px] text-teal-700/70 leading-relaxed">
-                {t('financeAdmin.features.language.description')}
+              <h4 className="text-slate-900 font-semibold text-lg mb-2">
+                {i18n.language === 'te' ? 'మల్టీ-లాంగ్వేజ్ సపోర్ట్' : 'Multi-Language Support'}
+              </h4>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                {i18n.language === 'te' ? 'తెలుగు (te), హిందీ (hi), మరియు ఇంగ్లీష్ (en) భాషల సపోర్ట్.' : 'Accessible interfaces native in English (en), Telugu (te), and Hindi (hi).'}
               </p>
             </motion.div>
 
             {/* Feature 3 */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-              <div className="w-12 h-12 bg-amber-50/50 rounded-2xl flex items-center justify-center mb-6 border border-amber-100/50">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="bg-slate-50 border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-200 p-6 rounded-xl flex flex-col items-start">
+              <div className="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center mb-4">
                 <Share2 className="w-5 h-5 text-amber-500" />
               </div>
-              <h4 className="font-bold text-teal-950 mb-3 text-sm">{t('financeAdmin.features.instrument.title')}</h4>
-              <p className="text-[13px] text-teal-700/70 leading-relaxed">
-                {t('financeAdmin.features.instrument.description')}
+              <h4 className="text-slate-900 font-semibold text-lg mb-2">
+                {i18n.language === 'te' ? 'ఇన్స్ట్రుమెంట్ ఇంటిగ్రేషన్' : 'Instrument Integration'}
+              </h4>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                {i18n.language === 'te' ? 'HL7, Sysmex మరియు ROCHE-COBAS మెషీన్ల కనెక్టివిటీ.' : 'Seamless bi-directional HL7, Sysmex, and ROCHE-COBAS connectivity.'}
               </p>
             </motion.div>
 
             {/* Feature 4 */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-              <div className="w-12 h-12 bg-purple-50/50 rounded-2xl flex items-center justify-center mb-6 border border-purple-100/50">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="bg-slate-50 border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-200 p-6 rounded-xl flex flex-col items-start">
+              <div className="w-12 h-12 bg-purple-50 rounded-lg flex items-center justify-center mb-4">
                 <LockKeyhole className="w-5 h-5 text-purple-500" />
               </div>
-              <h4 className="font-bold text-teal-950 mb-3 text-sm">{t('financeAdmin.features.admin.title')}</h4>
-              <p className="text-[13px] text-teal-700/70 leading-relaxed">
-                {t('financeAdmin.features.admin.description')}
+              <h4 className="text-slate-900 font-semibold text-lg mb-2">
+                {i18n.language === 'te' ? 'ఎంటర్ప్రైజ్ అడ్మిన్ కన్సోల్' : 'Enterprise Admin Console'}
+              </h4>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                {i18n.language === 'te' ? 'డాక్టర్లు, సెంటర్లు, యూజర్లు, అవుట్సోర్సింగ్ మరియు మార్కెటింగ్ మేనేజ్మెంట్.' : 'Comprehensive management for Doctors, Centers, Users, Outsourcing, and Marketing all in one secure pane.'}
               </p>
             </motion.div>
           </div>
