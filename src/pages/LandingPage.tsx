@@ -1,7 +1,8 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import LanguageTransition, { type Lang } from '../components/LanguageTransition';
+import { supabase } from '../lib/supabase';
 import {
   Search, CheckCircle2,
   AlertTriangle, Activity, Printer,
@@ -9,7 +10,7 @@ import {
   Command, Globe2, LockKeyhole,
   TrendingUp, Zap, Cpu, Send, CreditCard, Banknote, BrainCircuit,
   Building2, Stethoscope, Share2, Headset, ShieldCheck, RefreshCw, FileBadge,
-  Users, GraduationCap
+  Users, GraduationCap, X
 } from 'lucide-react';
 
 export default function LandingPage() {
@@ -17,6 +18,39 @@ export default function LandingPage() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [targetLang, setTargetLang] = useState<Lang | null>(null);
   const [activeWorkflowStep, setActiveWorkflowStep] = useState(1);
+  const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
+  const [isTrialSuccess, setIsTrialSuccess] = useState(false);
+  const [trialForm, setTrialForm] = useState({ name: '', phone: '', labName: '', address: '' });
+
+  const [isSubmittingTrial, setIsSubmittingTrial] = useState(false);
+
+  const handleTrialSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmittingTrial(true);
+    
+    try {
+      const { error } = await supabase
+        .from('trial_requests')
+        .insert([
+          { 
+            name: trialForm.name, 
+            phone_number: trialForm.phone, 
+            lab_name: trialForm.labName || null, 
+            lab_address: trialForm.address 
+          }
+        ]);
+        
+      if (error) throw error;
+      
+      setIsTrialSuccess(true);
+      setTrialForm({ name: '', phone: '', labName: '', address: '' });
+    } catch (error: any) {
+      console.error("Failed to submit form:", error);
+      alert(`Failed to request trial: ${error.message}`);
+    } finally {
+      setIsSubmittingTrial(false);
+    }
+  };
 
   const switchLanguage = (lang: Lang) => {
     if (i18n.language === lang) return;
@@ -120,7 +154,7 @@ export default function LandingPage() {
                   {i18n.language === 'te' ? 'సర్వర్లు, AMCలు, సాఫ్ట్వేర్ ట్రైనింగ్... ఈ తలనొప్పులు ఇక వద్దు. తెలుగులో సులువుగా వాడుకునే DLabs క్లౌడ్ సిస్టమ్కి మారండి. ఎక్స్ట్రా ఖర్చులు ఏమీ ఉండవు.' : t('hero.subtitle')}
                 </motion.p>
                 <motion.div variants={fadeInUp}>
-                  <button className="px-6 py-3 sm:px-8 sm:py-3.5 bg-[#1b5853] hover:bg-[#13403c] text-[#4ac2b3] rounded-[16px] font-bold text-base sm:text-lg transition-all shadow-xl shadow-[#1b5853]/30 w-full sm:w-auto">
+                  <button onClick={() => setIsTrialModalOpen(true)} className="px-6 py-3 sm:px-8 sm:py-3.5 bg-[#1b5853] hover:bg-[#13403c] text-[#4ac2b3] rounded-[16px] font-bold text-base sm:text-lg transition-all shadow-xl shadow-[#1b5853]/30 w-full sm:w-auto">
                     {t('hero.startFreeTrial')}
                   </button>
                 </motion.div>
@@ -253,8 +287,8 @@ export default function LandingPage() {
                   key={step}
                   onClick={() => setActiveWorkflowStep(step)}
                   className={`px-6 py-5 rounded-2xl cursor-pointer transition-all duration-300 border-2 flex items-center ${activeWorkflowStep === step
-                      ? 'bg-teal-50 border-teal-500 shadow-md transform scale-[1.02]'
-                      : 'bg-white border-transparent hover:bg-slate-50 hover:border-slate-200'
+                    ? 'bg-teal-50 border-teal-500 shadow-md transform scale-[1.02]'
+                    : 'bg-white border-transparent hover:bg-slate-50 hover:border-slate-200'
                     }`}
                 >
                   <div className={`w-10 h-10 rounded-full flex items-center justify-center font-black mr-4 ${activeWorkflowStep === step ? 'bg-teal-600 text-white shadow-sm' : 'bg-slate-100 text-slate-500'
@@ -767,6 +801,85 @@ export default function LandingPage() {
         </div>
       </footer>
 
+      {/* Trial Modal */}
+      <AnimatePresence>
+        {isTrialModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-teal-950/60 backdrop-blur-sm"
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="bg-white rounded-3xl p-6 sm:p-8 w-full max-w-md shadow-2xl relative overflow-hidden text-left"
+            >
+              <button
+                onClick={() => {
+                  setIsTrialModalOpen(false);
+                  setTimeout(() => setIsTrialSuccess(false), 300);
+                }}
+                className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors bg-slate-100 hover:bg-slate-200 p-2 rounded-full"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="mb-6">
+                <div className="flex items-center gap-2 mb-2">
+                  <Activity className="w-6 h-6 text-teal-600" />
+                  <h3 className="text-2xl font-black text-teal-950">{t('hero.startFreeTrial')}</h3>
+                </div>
+                {!isTrialSuccess && <p className="text-teal-700/80 text-sm font-medium">Experience the easiest LIMS in the market.</p>}
+              </div>
+
+              {isTrialSuccess ? (
+                <div className="text-center py-6">
+                  <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle2 className="w-8 h-8 text-teal-600" />
+                  </div>
+                  <h4 className="text-xl font-bold text-teal-950 mb-2">Request Processed!</h4>
+                  <p className="text-teal-700/80">Your request has been processed and we will get back to you shortly.</p>
+                  <button 
+                    onClick={() => {
+                      setIsTrialModalOpen(false);
+                      setTimeout(() => setIsTrialSuccess(false), 300);
+                    }}
+                    className="mt-6 px-6 py-2.5 bg-teal-50 text-teal-700 font-bold rounded-xl hover:bg-teal-100 transition-colors w-full"
+                  >
+                    Close
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleTrialSubmit} className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-bold text-teal-900 mb-1">Name <span className="text-rose-500">*</span></label>
+                    <input required type="text" value={trialForm.name} onChange={(e) => setTrialForm({ ...trialForm, name: e.target.value })} className="w-full px-4 py-2.5 rounded-xl border border-teal-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition-all" placeholder="Enter your full name" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-teal-900 mb-1">Phone Number <span className="text-rose-500">*</span></label>
+                    <input required type="tel" value={trialForm.phone} onChange={(e) => setTrialForm({ ...trialForm, phone: e.target.value })} className="w-full px-4 py-2.5 rounded-xl border border-teal-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition-all" placeholder="Enter 10-digit number" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-teal-900 mb-1">Lab Name <span className="text-teal-600/60 font-normal">(Optional)</span></label>
+                    <input type="text" value={trialForm.labName} onChange={(e) => setTrialForm({ ...trialForm, labName: e.target.value })} className="w-full px-4 py-2.5 rounded-xl border border-teal-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition-all" placeholder="Enter your lab name" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-teal-900 mb-1">Lab Address</label>
+                    <textarea required value={trialForm.address} onChange={(e) => setTrialForm({ ...trialForm, address: e.target.value })} className="w-full px-4 py-2.5 rounded-xl border border-teal-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition-all resize-none h-20" placeholder="City, State or Full Address"></textarea>
+                  </div>
+
+                  <button type="submit" disabled={isSubmittingTrial} className="w-full py-3.5 bg-teal-600 hover:bg-teal-700 text-white rounded-xl font-bold text-base transition-colors shadow-lg shadow-teal-600/30 mt-2 disabled:opacity-70 flex items-center justify-center gap-2">
+                    {isSubmittingTrial ? <RefreshCw className="w-5 h-5 animate-spin" /> : null}
+                    {isSubmittingTrial ? 'Requesting...' : 'Request Trial Access'}
+                  </button>
+                </form>
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
